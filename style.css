@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(217, 100%, 97%);
+    height: 100vh;
+   
+}
+.container{
+    width: 60%;
+    height: 560px;
+    background-color: white;
+    /* overflow: hidden; */
+    position: absolute;
+    /* top: 50%; */
+    /* left: 50%; */
+    padding: 10px;
+    /* transform: translate(-50%,-50%); */
+    display: flex;
+    justify-content: left;
+    align-items: top;
+    border-radius: 10px;
+}
+.slideBar{
+    width: 30%;
+    background: url("./assets/images/bg-sidebar-desktop.svg");
+    background-size: cover;
+    border-radius: 10px;
+    color: white;
+}
+.slideBar ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+.slideBar ul li{
+    display: flex;
+    align-items: center;
+    margin: 10px ;
+
+}
+.list-num{
+    width: 27px;
+    height: 27px;
+    margin-right: 15px;
+    font-size: 12px;
+    display: grid;
+    place-items: center;
+    border: 2px solid white;
+    border-radius: 50%;
+    /* pointer-events: none; */
+    /* transition: 1s; */
+}
+.side-content{
+    /* font-size: 14px; */
+    /* transform: translateY((-10px)); */
+}
+
+/* step one container */
+.step-one-container{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 70px;
+     position: relative;
+
+}
+.header-sec{
+    width: 100%;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.input-container .input-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0px;
+}
+.input-content label{
+    padding: 5px 0;
+}
+.label-container{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.error-field{
+    font-size: 14px;
+    color: red;
+    display: none;
+}
+.input-content input{
+    width: 80%;
+    padding: 12px;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+}
+.btns{
+   
+    position: relative;
+    top: 15%;
+    left: 19%;
+}
+.btns button{
+    border: none;
+    padding: 15px 30px;
+    background-color: darkblue;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
