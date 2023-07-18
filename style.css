@@ -212,7 +212,7 @@ body{
     padding: 20px 70px;
     gap: 2em;
      /* position: relative; */
-     /* display: none; */
+     display: none;
      margin: auto;
  }
 
@@ -222,20 +222,63 @@ body{
     gap: 1.3em;
  }
 
+ .forthContainer{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 20px 70px;
+    gap: 2em;
+     /* position: relative; */
+     /* display: none; */
+     margin: auto;
+ }
+ .ForthMiddleSec{
+    display: flex;
+    flex-direction: column;
+    /* gap: 1.3em; */
+ }
+
  .innerRow{
     display: flex;
+    width: 25em;
+    /* border: 1px solid blue; */
+   
+    padding: 1em;
+    border-radius: 10px;
+    justify-content: space-between;
+    background-color: rgb(245, 244, 244);
+ }
+ .cost{
+    /* padding-left: 20px; */
+ }
+
+ 
+.service1{
+    padding-right: 1em;
+}
+.innerRow2{
+    width: 25em;
+    /* border: 1px solid blue; */
+    border-top: 1px solid rgb(209, 204, 204);
+    padding: 1em;
+    /* border-radius: 10px; */
+    justify-content: space-between;
+    background-color: rgb(245, 244, 244);
+}
+.marge{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    
+}
+.innerRow3{
     width: 25em;
     border: 1px solid blue;
     padding: 1em;
     border-radius: 10px;
     justify-content: space-between;
- }
- .cost{
-    /* padding-left: 20px; */
- }
-.service1{
-    padding-right: 1em;
 }
-.service2{
-    padding-right: 2.4em;
+.service3{
+    display: flex;
+    justify-content: space-between;
 }
