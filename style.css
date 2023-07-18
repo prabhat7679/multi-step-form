@@ -12,26 +12,28 @@ body{
    
 }
 .container{
-    width: 60%;
-    height: 560px;
+    /* width: 60%; */
+    /* height: 560px; */
     background-color: white;
-    /* overflow: hidden; */
+    overflow: hidden;
     position: absolute;
-    /* top: 50%; */
-    /* left: 50%; */
     padding: 10px;
-    /* transform: translate(-50%,-50%); */
     display: flex;
     justify-content: left;
     align-items: top;
     border-radius: 10px;
 }
 .slideBar{
-    width: 30%;
+    /* width: 30%; */
     background: url("./assets/images/bg-sidebar-desktop.svg");
     background-size: cover;
     border-radius: 10px;
     color: white;
+    /* padding: 1em; */
+}
+.steps{
+    margin-left: 10px;
+    margin-right: 40px;
 }
 .slideBar ul{
     list-style: none;
@@ -53,8 +55,6 @@ body{
     place-items: center;
     border: 2px solid white;
     border-radius: 50%;
-    /* pointer-events: none; */
-    /* transition: 1s; */
 }
 .side-content{
     /* font-size: 14px; */
@@ -63,13 +63,13 @@ body{
 
 /* step one container */
 .step-one-container{
-    width: 60%;
+    /* width: 60%; */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     padding: 20px 70px;
      position: relative;
-
+     display: none;
 }
 .header-sec{
     width: 100%;
@@ -107,12 +107,12 @@ body{
     border-radius: 5px;
 }
 .btns{
-   
-    position: relative;
-    top: 15%;
-    left: 19%;
+    display: flex;
+    justify-content: end;
+    padding-right: 70px;
+    margin-top: 60px;
 }
-.btns button{
+ .next-step{
     border: none;
     padding: 15px 30px;
     background-color: darkblue;
@@ -121,3 +121,82 @@ body{
     border-radius: 5px;
     cursor: pointer;
 }
+
+ /* second container */
+ .secondContainer{
+
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 20px 70px;
+    gap: 2em;
+     position: relative;
+     /* display: none; */
+     margin: auto;
+}
+
+ .middleSec{
+    display: flex;
+    gap: 1em;
+ }
+ .allPlans{
+    height: 150px;
+    width: 120px;
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    /* align-items: center; */
+    padding:10px;
+    border-radius: 10px;
+
+ }
+ 
+.pricing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 1em;
+    background-color: rgb(243, 239, 239);
+    border-radius: 10px;
+}
+ .toggle {
+    appearance: none;
+    width: 50px;
+    height: 26px;
+    background-color: hsl(228, 45%, 44%);
+    border-radius: 13px;
+    position: relative;
+  }
+  .toggle::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    background-color: white;
+    transition: transform 0.2s;
+  }
+  .toggle:checked::before {
+    transform: translateX(24px);
+  }
+
+ .last{
+  display: flex; 
+  /* background-color: aqua;  */
+  justify-content: space-between;
+  margin-top: 40px;
+ }
+ .go-back{
+    border: none;
+    padding: 15px 30px;
+    background-color:white;
+    /* color: white; */
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+ }
