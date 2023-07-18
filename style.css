@@ -72,7 +72,10 @@ body{
      display: none;
 }
 .header-sec{
-    width: 100%;
+    /* width: 100%; */
+   display: flex;
+   flex-direction: column;
+   gap: 1em;
 }
 
 .input-container{
@@ -132,7 +135,7 @@ body{
     padding: 20px 70px;
     gap: 2em;
      position: relative;
-     /* display: none; */
+     display: none;
      margin: auto;
 }
 
@@ -200,3 +203,39 @@ body{
     border-radius: 5px;
     cursor: pointer;
  }
+
+ .thirdContainer{
+    /* width: 60%; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 20px 70px;
+    gap: 2em;
+     /* position: relative; */
+     /* display: none; */
+     margin: auto;
+ }
+
+ .ThirdMiddleSec{
+    display: flex;
+    flex-direction: column;
+    gap: 1.3em;
+ }
+
+ .innerRow{
+    display: flex;
+    width: 25em;
+    border: 1px solid blue;
+    padding: 1em;
+    border-radius: 10px;
+    justify-content: space-between;
+ }
+ .cost{
+    /* padding-left: 20px; */
+ }
+.service1{
+    padding-right: 1em;
+}
+.service2{
+    padding-right: 2.4em;
+}
