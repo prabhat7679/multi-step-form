@@ -55,6 +55,12 @@ body{
     place-items: center;
     border: 2px solid white;
     border-radius: 50%;
+    font-weight: 500;
+}
+#one{
+    background-color: rgb(213, 242, 252);
+    color: black;
+    
 }
 .side-content{
     /* font-size: 14px; */
@@ -129,7 +135,7 @@ body{
  /* second container */
  .secondContainer{
     width: 60%;
-    height: 500px;
+    /* height: 500px; */
     display: flex;
     flex-direction: column;
     /* align-items: center; */
@@ -209,7 +215,7 @@ body{
 
  .thirdContainer{
     width: 60%;
-    height: 500px;
+    /* height: 500px; */
     display: flex;
     flex-direction: column;
     /* align-items: center; */
@@ -228,7 +234,7 @@ body{
 
  .forthContainer{
     width: 60%;
-    height: 500px;
+    /* height: 500px; */
     display: flex;
     flex-direction: column;
     /* align-items: center; */
@@ -311,3 +317,4 @@ body{
      margin: auto;
      font-size: 18px;
  }
+

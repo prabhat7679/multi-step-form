@@ -3,7 +3,7 @@
     const Arcade = document.getElementById('Arcade');
     const Advanced = document.getElementById('Advanced');
     const Pro = document.getElementById('Pro');
-    const errorMessage= document.getElementById('error-field')
+    const errorMessage= document.getElementsByClassName('error-field')
 
     const container = document.querySelector(".container")
     
@@ -19,16 +19,32 @@
     const forthBtnNext = document.getElementById("forthBtnNext");
     // const fifthBtnNext = document.getElementById("fifthBtnNext");
 
-//first-btn-nxt
+    const backSecBtn = document.getElementById("backSecBtn");
+    const backthirdBtn = document.getElementById("backthirdBtn");
+    const backforthBtn = document.getElementById("backforthBtn");
+
+
+    const one = document.getElementById("one");
+    const two = document.getElementById("two");
+    const three = document.getElementById("three");
+    const four = document.getElementById("four");
 
     container.addEventListener("click", function(event){
 
-            console.log(event.target)
          if(event.target === fstBtnNext)
          {
-            firstContainer.style.display="none";
-            secondContainer.style.display="block";
-            secondContainer.style.display="flex";
+           
+            if(formValidate())
+            {
+                
+               firstContainer.style.display="none";
+               secondContainer.style.display="block";
+               secondContainer.style.display="flex";
+               one.style.background = "none";
+               one.style.color="white";
+               two.style.background="rgb(213, 242, 252)";
+               two.style.color="black";
+            }
 
          }
          if(event.target === secBtnNext)
@@ -36,6 +52,10 @@
             secondContainer.style.display="none";
             thirdContainer.style.display="block";
             thirdContainer.style.display="flex";
+            two.style.background = "none";
+            two.style.color="white";
+            three.style.background="rgb(213, 242, 252)";
+            three.style.color="black";
 
          }
          if(event.target === thdBtnNext)
@@ -43,6 +63,10 @@
             thirdContainer.style.display="none";
             forthContainer.style.display="block";
             forthContainer.style.display="flex";
+            three.style.background = "none";
+            three.style.color="white";
+            four.style.background="rgb(213, 242, 252)";
+            four.style.color="black";
 
          }
          if(event.target === forthBtnNext)
@@ -52,13 +76,41 @@
             fifthContainer.style.display="flex";
 
          }
-         if(event.target === fstBtnNext)
+         if(event.target === backSecBtn )
          {
-            firstContainer.style.display="none";
-            secondContainer.style.display="block";
-            secondContainer.style.display="flex";
-
+            secondContainer.style.display="none";           
+            firstContainer.style.display="block";
+            firstContainer.style.display="flex";
+            two.style.background = "none";
+            two.style.color="white";
+            one.style.background="rgb(213, 242, 252)";
+            one.style.color="black";
+             count=0;
          }
+
+         if(event.target === backthirdBtn )
+         {
+            secondContainer.style.display="block";           
+            secondContainer.style.display="flex";
+            thirdContainer.style.display="none";
+            three.style.background = "none";
+            three.style.color="white";
+            two.style.background="rgb(213, 242, 252)";
+            two.style.color="black";
+         }
+         
+         if(event.target === backforthBtn )
+         {
+            thirdContainer.style.display="block";
+            thirdContainer.style.display="flex";
+            forthContainer.style.display="none";
+            four.style.background = "none";
+            four.style.color="white";
+            three.style.background="rgb(213, 242, 252)";
+            three.style.color="black";
+            
+         }
+
     })
 
     checkbox.addEventListener('change', function() {
@@ -88,10 +140,48 @@
     //   formValidate()
     });
 
-
+       let count=0;
     function formValidate()
-    {
-        const name=document.querySelector('#name').value;
-        const email=document.querySelector('#email').value;
-        const number = document.querySelector('#number').value;
+    { 
+      const name=document.querySelector('#name').value;
+      const email=document.querySelector('#email').value;
+      const number = document.querySelector('#number').value;
+
+        if (name.length < 3 || (!/^[a-zA-Z]+$/.test(name)))
+         {
+          document.querySelector("#error1").style.display = "block";
+        
+         return false;
+       }
+       else{
+         document.querySelector("#error1").style.display = "none";
+         count++;
+       }
+
+       if(!email.includes("@gmail.com"))
+       {
+         document.querySelector("#error2").style.display = "block";
+         return false;
+       }else
+      {
+         document.querySelector("#error2").style.display = "none";
+         count++;
+      }
+       
+      if(number.length !=10)
+      {
+         document.querySelector("#error3").style.display = "block";
+         return false;
+      }else
+      {
+         document.querySelector("#error3").style.display = "none";
+         count++;
+          if(count=== 3)
+            {
+              return true;
+            }
+      }    
     }
+
+    
+
