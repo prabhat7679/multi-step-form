@@ -85,7 +85,10 @@
             two.style.color="white";
             one.style.background="rgb(213, 242, 252)";
             one.style.color="black";
-             count=0;
+            //  count=0;
+            flag1=false;
+            flag2=false;
+            flag3=false;
          }
 
          if(event.target === backthirdBtn )
@@ -140,7 +143,10 @@
     //   formValidate()
     });
 
-       let count=0;
+      //  let count=0;
+      let flag1=false;
+      let flag2=false;
+      let flag3=false;
     function formValidate()
     { 
       const name=document.querySelector('#name').value;
@@ -155,7 +161,8 @@
        }
        else{
          document.querySelector("#error1").style.display = "none";
-         count++;
+         // count++;
+         flag1=true;
        }
 
        if(!email.includes("@gmail.com"))
@@ -165,7 +172,8 @@
        }else
       {
          document.querySelector("#error2").style.display = "none";
-         count++;
+         // count++;
+         flag2=true;
       }
        
       if(number.length !=10)
@@ -175,12 +183,18 @@
       }else
       {
          document.querySelector("#error3").style.display = "none";
-         count++;
-          if(count=== 3)
-            {
-              return true;
-            }
-      }    
+         // count++;
+         flag3=true;
+         // console.log(count)
+         //  if(count=== 3)
+         //    {
+         //      return true;
+         //    }
+         if(flag1== true && flag2== true && flag3== true)
+         {
+            return true;
+         }
+      }  
     }
 
     
