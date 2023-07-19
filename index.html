@@ -28,7 +28,7 @@
   </head>
   <body>
      <!-- side bar start -->
-      <div class="container">
+      <div class="container" id="container">
         <div class="slideBar">
          <ul class="steps step-one">
            <li class="step1 allSteps">
@@ -70,7 +70,7 @@
       </div>
 
           <!-- step one start -->
-      <div class="step-one-container">
+      <div class="firstContainer" id="firstContainer">
         <div class="header-sec">
           <h1 class="title">Personal info</h1>
           <p class="info-p">Please provide your name, email address and phone number.</p>
@@ -89,7 +89,7 @@
                    <label for="name">Email Address</label>
                    <span class="error-field">This field is required</span>     
               </div>
-              <input type="text" name="fullname" value="" placeholder="abc@gmail.com" class="inputs" id="name">
+              <input type="text" name="email" value="" placeholder="abc@gmail.com" class="inputs" id="email">
           </div>
 
           <div class="input-content">
@@ -97,16 +97,16 @@
                  <label for="name">Phone Number</label>
                  <span class="error-field">This field is required</span>     
             </div>
-            <input type="text" name="fullname" value="" placeholder="i.e +91 1234567899" class="inputs" id="name">
+            <input type="text" number="number" value="" placeholder="i.e +91 1234567899" class="inputs" id="number">
          </div>
         </form>
         <div class="btns">
-          <button class="next-step">Next Step</button>
+          <button class="next-step" id="fstBtnNext">Next Step</button>
         </div>
       </div>
       <!-- step one end -->
       <!-- step two start -->
-      <div class="secondContainer content">
+      <div class="secondContainer content" id="secondContainer">
         <div class="header-sec">
           <h1 class="title">Select your plan</h1>
           <p class="info-p">You have the option of monthly or yearly billing.</p>
@@ -141,16 +141,16 @@
         </div>
         <div class="last ">
           <button class="go-back">go-back</button>
-          <button class="next-step ">Next Step</button>
+          <button class="next-step " id="secBtnNext">Next Step</button>
         </div>
 
       </div>
 
-      <div class="thirdContainer">
+      <div class="thirdContainer" id="thirdContainer">
           
         <div class="header-sec">
-          <h1 class="title">Select your plan</h1>
-          <p class="info-p">You have the option of monthly or yearly billing.</p>
+          <h1 class="title">Pick add-ons</h1>
+          <p class="info-p">Add-ons help enhance your gaming experience.</p>
         </div>
         <div class="ThirdMiddleSec">
          <div class="innerRow">
@@ -171,7 +171,7 @@
          </div>
          <div class="innerRow">
           <input type="checkbox" id="" class="">
-            <div class="service3">
+            <div class="service2">
               <h4>Customizable Profile</h4>
               <p>Custom theme on your profile</p>
             </div>
@@ -181,13 +181,13 @@
 
         <div class="last ">
           <button class="go-back">go-back</button>
-          <button class="next-step ">Next Step</button>
+          <button class="next-step " id="thdBtnNext">Next Step</button>
         </div>
 
 
       </div>
 
-      <div class="forthContainer">
+      <div class="forthContainer" id="forthContainer">
           
         <div class="header-sec">
           <h1 class="title">Finishing up</h1>
@@ -222,13 +222,13 @@
 
         <div class="last ">
           <button class="go-back">Go-Back</button>
-          <button class="next-step2 ">confirm</button>
+          <button class="next-step2 " id="forthBtnNext">confirm</button>
         </div>
 
 
       </div>
 
-      <div class="fifthContainer">
+      <div class="fifthContainer" id="fifthContainer">
         <div class="logo">
           <img src="./assets/images/icon-thank-you.svg" alt="">
         </div>
