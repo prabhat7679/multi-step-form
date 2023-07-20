@@ -179,9 +179,32 @@
          let perYear= document.getElementById("perYear");
          let totalId = document.getElementById("totalId");
 
-         perYear.innerText="";
-         totalId.innerText="";
+         const paraId1 = document.getElementById("paraId1");
+         const spanId1 = document.getElementById("spanId1")
+
+         const paraId2 = document.getElementById("paraId2");
+         const spanId2 = document.getElementById("spanId2")
+
+         const paraId3 = document.getElementById("paraId3");
+         const spanId3 = document.getElementById("spanId3");
+
+         // const result1 = Number(spanId1.innerText.replace(/\$|\/yr|\/mo|\+/g,''))
+         // totalCost-=result1;
+
+         // const result2 = Number(spanId2.innerText.replace(/\$|\/yr|\/mo|\+/g,''))
+         // totalCost-=result2;
+
+         // const result3 = Number(spanId3.innerText.replace(/\$|\/yr|\/mo|\+/g,''))
+         // totalCost-=result3;
          
+         // paraId1.innerText="";
+         // paraId2.innerText="";
+         // paraId3.innerText="";
+         // spanId1.innerText="";
+         // spanId2.innerText="";
+         // spanId3.innerText="";
+         // perYear.innerText="";
+         // totalId.innerText="";
          
       }
     }
