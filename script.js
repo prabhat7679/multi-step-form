@@ -328,7 +328,7 @@
          {
           document.querySelector("#error1").style.display = "block";
         
-         return false;
+         // return false;
        }
        else{
          document.querySelector("#error1").style.display = "none";
@@ -339,7 +339,7 @@
        if(!email.includes("@gmail.com"))
        {
          document.querySelector("#error2").style.display = "block";
-         return false;
+         // return false;
        }else
       {
          document.querySelector("#error2").style.display = "none";
@@ -350,7 +350,7 @@
       if(number.length !=10)
       {
          document.querySelector("#error3").style.display = "block";
-         return false;
+         // return false;
       }else
       {
          document.querySelector("#error3").style.display = "none";
