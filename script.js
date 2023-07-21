@@ -35,15 +35,94 @@
 
     const planFlag= false;
 
-// console.log(addon1Price, addon2Price, addon3Price)
+    const arcadeClass= document.getElementsByClassName('arcadeClass')
+    const advancedClass = document.getElementsByClassName('advancedClass')
+    const proClass = document.getElementsByClassName('proClass');
+    const plan1 = document.getElementById('plan1');
+    const plan2 = document.getElementById('plan2');
+    const plan3 = document.getElementById('plan3');
+
+    const checkbox1= document.getElementById("checkbox1")
+    const checkbox2= document.getElementById("checkbox2")
+    const checkbox3= document.getElementById("checkbox3")
+
+    const service1= document.getElementsByClassName("service1")
+    const service2= document.getElementsByClassName("service2")
+    const service3= document.getElementsByClassName("service3")
+
+    const paraId1 = document.getElementById("paraId1")
+    const spanId1 = document.getElementById("spanId1")
+    const paraId2 = document.getElementById("paraId2")
+    const spanId2 = document.getElementById("spanId2")
+    const paraId3 = document.getElementById("paraId3")
+         const spanId3 = document.getElementById("spanId3")
+
+    let cost1=document.getElementById("cost1");
+    let cost1Title=document.getElementById("cost1Title");
+    let selectPlan = false;
+
+   let flag1=false;
+   let flag2=false;
+   let flag3=false;
+   let totalCost=0;
+
 
     container.addEventListener("click", function(event){
-      // console.log(event.target.classList.contains('next-step'))
-      // console.log(event.target.classList.contains('go-back'))
-      // console.log(event.target.classList.contains("allPlans"))
-      // console.log(event.target)
-      console.log((event.target.classList.contains("checkbox")))
-      if(event.target.classList.contains('next-step'))
+      
+      if(event.target.classList.contains('arcadeClass')){
+
+        if( Arcade.innerText.includes('mo'))
+        {
+         cost1Title.innerText= `Arcade(per monthly)`;
+        }else{
+         cost1Title.innerText= `Arcade(per yearly)`;
+        }
+
+        cost1.innerText = Arcade.innerText;
+         console.log(cost1,cost1Title)
+         selectPlan=true;
+         
+         plan1.style.border="2px solid darkblue";
+         plan2.style.border="1px solid blue";
+         plan3.style.border="1px solid blue";
+
+      }else if(event.target.classList.contains('advancedClass')){
+         if( Advanced.innerText.includes('mo'))
+         {
+          cost1Title.innerText= `Advanced(per monthly)`; 
+         }else
+         {
+            cost1Title.innerText= `Advanced(per yearly)`;
+         }
+
+         cost1.innerText = Advanced.innerText;
+         console.log(cost1,cost1Title)
+         selectPlan=true;
+        
+         plan2.style.border="2px solid darkblue";
+         plan1.style.border="1px solid blue";
+         plan3.style.border="1px solid blue";
+
+      }else if(event.target.classList.contains('proClass')){
+         // console.log("pro")
+         if( Pro.innerText.includes('mo'))
+         {
+          cost1Title.innerText= `Pro(per monthly)`;  
+         }else{
+            cost1Title.innerText= `Pro(per yearly)`;
+         }
+
+         cost1.innerText = Pro.innerText;
+         console.log(cost1,cost1Title)
+         selectPlan=true;
+         
+         plan3.style.border="2px solid darkblue";
+         plan2.style.border="1px solid blue";
+         plan1.style.border="1px solid blue";
+      }
+
+      // console.log((event.target.classList.contains("checkbox")))
+      else if(event.target.classList.contains('next-step'))
       {
           allNextButtonFn(event)
           
@@ -54,10 +133,8 @@
       {
          // console.log("asdhiak")
          toggleFunction()
-      }else if(event.target.classList.contains("allPlans"))
-      {
-         allPlansFn(event.target)
-      }else if(event.target.classList.contains("checkbox"))
+      }
+      else if(event.target.classList.contains("checkbox"))
       {
          checkBox(event.target)
          
@@ -71,7 +148,7 @@
       if(event.target === fstBtnNext)
          {
             // formValidate()
-            if(formValidate())
+            if(true)
             {
                 
                firstContainer.style.display="none";
@@ -86,7 +163,7 @@
          }
          else if(event.target === secBtnNext)
          {
-            if (selectedPlans.length > 0) {
+            if (selectPlan) {
               secondContainer.style.display="none";
               thirdContainer.style.display="block";
               thirdContainer.style.display="flex";
@@ -94,13 +171,16 @@
               two.style.color="white";
               three.style.background="rgb(213, 242, 252)";
               three.style.color="black";
+
+              const result0= Number(cost1.innerText.replace(/\$|\/yr|\/mo|\+/g,''))
+            //   console.log(result0)
+              totalCost+=result0;
+
             }
 
          }
          else if(event.target === thdBtnNext)
          {
-            // console.log(selectedPlans)
-         // {
             thirdContainer.style.display="none";
             forthContainer.style.display="block";
             forthContainer.style.display="flex";
@@ -108,25 +188,52 @@
             three.style.color="white";
             four.style.background="rgb(213, 242, 252)";
             four.style.color="black";
-         //   }
 
+         if(checkbox1.checked){
+            // console.log("check1")
+
+            paraId1.innerText = service1[0].children[0].textContent;
+            spanId1.innerText = addon1Price.textContent;
+
+            const result1 = Number(spanId1.innerText.replace(/\$|\/yr|\/mo|\+/g,''))
+            totalCost+=result1;
+         }
+         if(checkbox2.checked){
+            // console.log("check2")
+
+            paraId2.innerText = service2[0].children[0].textContent;
+            spanId2.innerText = addon2Price.textContent;
+
+            const result2 = Number(spanId2.innerText.replace(/\$|\/yr|\/mo|\+/g,''))
+            totalCost+=result2;
+         }
+         if(checkbox3.checked)
+         {
+            // console.log("checkd3")
+
+            paraId3.innerText = service3[0].children[0].textContent;
+            spanId3.innerText = addon3Price.textContent;
+
+            const result3 = Number(spanId3.innerText.replace(/\$|\/yr|\/mo|\+/g,''))
+            totalCost+=result3;
+         }
+        
          let totalId = document.getElementById("totalId");
          let perYear= document.getElementById("perYear");
-         let cost1=document.getElementById("cost1");
+         // let cost1=document.getElementById("cost1");
 
-         cost1=cost1.innerText.split('');
-         console.log(cost1)
-
-         if(cost1.includes('y')){
-         totalId.innerText = `+$${totalCost}/yr`;
-         perYear.innerText =`Total(per year)`;
-         console.log(totalCost);
-         }else{
-            totalId.innerText = `+$${totalCost}/mo`
+         if(cost1 !== undefined)
+         {
+         cost1Arr=cost1.innerText.split('');
          }
-      
-         
-
+         if(cost1Arr.includes('y')){
+            totalId.innerText = `+$${totalCost}/yr`;
+            perYear.innerText =`Total(per year)`;
+            console.log(totalCost);
+            }else{
+               totalId.innerText = `+$${totalCost}/mo`
+            }
+            
          }
          else if(event.target === forthBtnNext)
          {
@@ -164,6 +271,8 @@
          three.style.color="white";
          two.style.background="rgb(213, 242, 252)";
          two.style.color="black";
+
+        totalCost =0 ;
       }
       
       else if(event.target === backforthBtn )
@@ -188,29 +297,26 @@
          const paraId3 = document.getElementById("paraId3");
          const spanId3 = document.getElementById("spanId3");
 
-         // const result1 = Number(spanId1.innerText.replace(/\$|\/yr|\/mo|\+/g,''))
-         // totalCost-=result1;
+         const result1 = Number(spanId1.innerText.replace(/\$|\/yr|\/mo|\+/g,''))
+         totalCost-=result1;
 
-         // const result2 = Number(spanId2.innerText.replace(/\$|\/yr|\/mo|\+/g,''))
-         // totalCost-=result2;
+         const result2 = Number(spanId2.innerText.replace(/\$|\/yr|\/mo|\+/g,''))
+         totalCost-=result2;
 
-         // const result3 = Number(spanId3.innerText.replace(/\$|\/yr|\/mo|\+/g,''))
-         // totalCost-=result3;
+         const result3 = Number(spanId3.innerText.replace(/\$|\/yr|\/mo|\+/g,''))
+         totalCost-=result3;
          
-         // paraId1.innerText="";
-         // paraId2.innerText="";
-         // paraId3.innerText="";
-         // spanId1.innerText="";
-         // spanId2.innerText="";
-         // spanId3.innerText="";
+         paraId1.innerText="";
+         paraId2.innerText="";
+         paraId3.innerText="";
+         spanId1.innerText="";
+         spanId2.innerText="";
+         spanId3.innerText="";
          // perYear.innerText="";
-         // totalId.innerText="";
+         totalId.innerText="";
          
       }
     }
-
-
-
 
     function formValidate()
     { 
@@ -257,7 +363,6 @@
       }  
     }
 
-
    function toggleFunction() {
       if (toggle.checked) {
         Arcade.textContent = '$90/yr';
@@ -295,121 +400,37 @@
     //   formValidate()
     };
     
-      let flag1=false;
-      let flag2=false;
-      let flag3=false;
-      let totalCost = 0;
-
-    
-
-    const plans = document.querySelectorAll('.allPlans');
-   //  console.log(plans)
-    let selectedPlans =[];
-   //  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-   //  const forthContainerContent = document.getElementById('forthContainerContent');
-   //  let totalCost = 0;
-
-    function isPlanSelected(planId) {
-      return selectedPlans.includes(planId);
-    }
-        
-      function allPlansFn(plan) {
-     
-        const planId = plan.getAttribute('id');
-       
-        if (!isPlanSelected(planId)) {
-          // Deselect all other plans
-          plans.forEach(p=> {
-            if (p.getAttribute('id') !== planId) {
-              p.classList.remove('selected');
-            }
-          });
-    
-          // Select the clicked plan
-          selectedPlans = [planId];
-
-          
-
-          const value1= Arcade.textContent;
-         //  console.log(val1);
-
-          let cost1=document.getElementById("cost1");
-          let cost1Title=document.getElementById("cost1Title");
-         //  console.log(plan.children[2].textContent,'hnhgnh');
-          cost1.innerText= plan.children[2].textContent;
-
-          if(plan.children[2].textContent.includes('mo')){
-            cost1Title.textContent = `${plan.children[1].textContent}(per monthly)`
-          }else{
-            cost1Title.textContent = `${plan.children[1].textContent}(per yearly)`
-          }
-          plan.classList.add('selected');
-         //  console.log(plan.children)
-
-         const result = Number(cost1.innerText.replace(/\$|\/yr|\/mo|\+/g,''))
-         totalCost+=result;
-          
-        }
-      };
-  
     function checkBox(event)
     {
-      console.log(event)
-      // console.log("bfeodweodweo")
-      const checkbox1= document.getElementById("checkbox1")
-      const checkbox2= document.getElementById("checkbox2")
-      const checkbox3= document.getElementById("checkbox3")
-
-      if(event === checkbox1)
+      // console.log(event)
+   
+      if(event === checkbox1 && checkbox1.checked)
       {
-         const service1= document.getElementsByClassName("service1")
-
-         // console.log(service1[0].children[0].textContent)
-         const paraId1 = document.getElementById("paraId1");
-         const spanId1 = document.getElementById("spanId1")
-         // console.log(paraId1, spanId1)
+         
          paraId1.innerText = service1[0].children[0].textContent;
          spanId1.innerText = addon1Price.textContent;
-         
-         const result = Number(spanId1.innerText.replace(/\$|\/yr|\/mo|\+/g,''))
-         totalCost+=result;
-         console.log(result)
+
       }
 
-      if(event === checkbox2)
+      if(event === checkbox2 && checkbox2.checked)
       {
-         const service2= document.getElementsByClassName("service2")
-
-         // console.log(service1[0].children[0].textContent)
-         const paraId2 = document.getElementById("paraId2");
-         const spanId2 = document.getElementById("spanId2")
-         // console.log(paraId1, spanId1)
+         
          paraId2.innerText = service2[0].children[0].textContent;
          spanId2.innerText = addon2Price.textContent;
 
-         const result = Number(spanId2.innerText.replace(/\$|\/yr|\/mo|\+/g,''));
-         totalCost+=result;
-         console.log(result)
       }
       
-      if(event === checkbox3)
+      if(event === checkbox3 && checkbox3.checked)
       {
-         const service3= document.getElementsByClassName("service3")
 
-         // console.log(service1[0].children[0].textContent)
-         const paraId3 = document.getElementById("paraId3");
-         const spanId3 = document.getElementById("spanId3")
-         // console.log(paraId1, spanId1)
          paraId3.innerText = service3[0].children[0].textContent;
          spanId3.innerText = addon3Price.textContent;
          
-         const result = Number(spanId3.innerText.replace(/\$|\/yr|\/mo|\+/g,''))
-         totalCost+=result;
-         console.log(result)
       }
-      
-     
     }
+
+
+
 
     
 
