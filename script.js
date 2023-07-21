@@ -148,7 +148,7 @@
       if(event.target === fstBtnNext)
          {
             // formValidate()
-            if(true)
+            if(formValidate())
             {
                 
                firstContainer.style.display="none";
